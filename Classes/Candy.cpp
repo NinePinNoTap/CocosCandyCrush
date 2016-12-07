@@ -1,18 +1,7 @@
 #include "Candy.h"
+#include "Global.h"
 
 USING_NS_CC;
-
-// [Filenames]
-static std::string CandySpriteFilenames[] = {
-	"candy/bean_blue.png",
-	"candy/bean_green.png",
-	"candy/bean_orange.png",
-	"candy/bean_pink.png",
-	"candy/bean_purple.png",
-	"candy/bean_red.png",
-	"candy/bean_white.png",
-	"candy/bean_yellow.png"
-};
 
 Candy::Candy()
 {
@@ -54,20 +43,63 @@ int Candy::getColumn() const
 	return m_column;
 }
 
+cocos2d::Sprite * Candy::getSprite()
+{
+	return m_sprite;
+}
+
+cocos2d::Size Candy::getSize() const
+{
+	return m_tileSize;
+}
+
 void Candy::setRandom()
 {
 	int randomID = RandomHelper::random_int(1, static_cast<int>(CandyType::Count) - 1);
 	
-	setType(static_cast<CandyType>(randomID));
+	setAttributes(static_cast<CandyType>(randomID), CandyBonus::None);
 }
 
-void Candy::setType(CandyType type)
+void Candy::dropCandyIntoGame(float height)
 {
-	m_type = type;
-	
-	int index = static_cast<int>(type);
+	if (m_sprite == nullptr)
+		return;
 
-	m_sprite = Sprite::create(CandySpriteFilenames[index - 1]);
+	m_sprite->setPositionY(height);
+	
+	m_sprite->runAction(EaseBounceOut::create(MoveTo::create(1.0f, Vec2::ZERO)));
+}
+
+void Candy::setAttributes(CandyType colour, CandyBonus bonus)
+{
+	if (m_sprite != nullptr)
+	{
+		m_sprite->runAction(RemoveSelf::create());
+	}
+
+	int index;
+
+	m_type = colour;
+	m_bonus = bonus;
+
+	index = static_cast<int>(colour);
+
+	switch (m_bonus)
+	{
+	case CandyBonus::None:
+		m_sprite = Sprite::create(Global::CandySpriteFilenames[index - 1]);
+		break;
+
+	case CandyBonus::DoublePoints:
+		m_sprite = Sprite::create(Global::BonusCandySpriteFilenames[index - 1]);
+		break;
+
+	default:
+		std::logic_error("Incorrect bonus found!");
+		break;
+	}
+
+	m_tileSize = m_sprite->getContentSize();
 
 	this->addChild(m_sprite, 1);
 }
@@ -75,6 +107,11 @@ void Candy::setType(CandyType type)
 CandyType Candy::getColour() const
 {
 	return m_type;
+}
+
+CandyBonus Candy::getBonus() const
+{
+	return m_bonus;
 }
 
 bool Candy::isSameColour(const Candy * candy) const

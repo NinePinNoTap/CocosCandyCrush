@@ -146,7 +146,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Candy.cpp" />
+    <ClCompile Include="..\Classes\CandyExplosion.cpp" />
     <ClCompile Include="..\Classes\GameBoard.cpp" />
+    <ClCompile Include="..\Classes\GameHelper.cpp" />
+    <ClCompile Include="..\Classes\GameLayer.cpp" />
+    <ClCompile Include="..\Classes\Global.cpp" />
     <ClCompile Include="..\Classes\Level.cpp" />
     <ClCompile Include="..\Classes\LevelManager.cpp" />
     <ClCompile Include="..\Classes\MainScene.cpp" />
@@ -155,7 +159,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Candy.h" />
+    <ClInclude Include="..\Classes\CandyExplosion.h" />
     <ClInclude Include="..\Classes\GameBoard.h" />
+    <ClInclude Include="..\Classes\GameHelper.h" />
+    <ClInclude Include="..\Classes\GameLayer.h" />
+    <ClInclude Include="..\Classes\Global.h" />
     <ClInclude Include="..\Classes\Level.h" />
     <ClInclude Include="..\Classes\LevelManager.h" />
     <ClInclude Include="..\Classes\MainScene.h" />

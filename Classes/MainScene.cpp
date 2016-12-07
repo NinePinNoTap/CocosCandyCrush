@@ -1,7 +1,7 @@
 #include "MainScene.h"
 #include "SimpleAudioEngine.h"
-#include "GameBoard.h"
-#include "LevelManager.h"
+#include "GameLayer.h"
+#include "Global.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -27,20 +27,10 @@ bool MainScene::init()
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	// Load levels
-	LevelManager* levelManager = LevelManager::getInstance();
-	levelManager->loadLevel("level1", "levels/level_1.json");
-	levelManager->loadLevel("level2", "levels/level_2.json");
+	// Game Layer
+	auto gameLayer = GameLayer::create();
+	this->addChild(gameLayer);
 
-	// Gameboard
-	auto gameBoard = new GameBoard;
-	gameBoard->initialise("level2");
-	this->addChild(gameBoard);
-
-	// Center the board in the layer
-	gameBoard->setPosition((origin + static_cast<Vec2>(visibleSize)) / 2.0f);
-
-	// Play background music
 	SimpleAudioEngine::getInstance()->playBackgroundMusic("sounds/background.mp3");
 
     return true;

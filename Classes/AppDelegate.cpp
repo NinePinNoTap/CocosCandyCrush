@@ -3,7 +3,8 @@
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(720, 720);
+static cocos2d::Size designResolutionSize = cocos2d::Size(720, 1280);
+static cocos2d::Size screenResolutionSize = cocos2d::Size(720, 1280);
 
 AppDelegate::AppDelegate()
 {
@@ -33,9 +34,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     if(!glview)
 	{
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("CandyCrush", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        glview = GLViewImpl::createWithRect("CandyCrushSaga", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
 #else
-        glview = GLViewImpl::create("CandyCrush");
+        glview = GLViewImpl::create("CandyCrushSaga");
 #endif
         director->setOpenGLView(glview);
     }
@@ -49,6 +50,9 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // Set the design resolution
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+    auto frameSize = glview->getFrameSize();
+
+    director->setContentScaleFactor(MIN(screenResolutionSize.height/designResolutionSize.height, screenResolutionSize.width/designResolutionSize.width));
 
     register_all_packages();
 
