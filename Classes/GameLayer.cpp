@@ -76,7 +76,7 @@ void GameLayer::onTouchMoved(cocos2d::Touch * touch, cocos2d::Event * evnt)
 
 	// Retrieve the candy we are on
 	candyAtTouch = getCandyAtTouch(touch->getLocation());
-	if (candyAtTouch == m_firstCandy)
+	if (candyAtTouch == m_firstCandy || candyAtTouch == nullptr)
 	{
 		candyAtTouch = nullptr;
 		return;

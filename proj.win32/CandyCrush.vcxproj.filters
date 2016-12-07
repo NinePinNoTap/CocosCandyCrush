@@ -10,6 +10,27 @@
     <Filter Include="cocos">
       <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Candy">
+      <UniqueIdentifier>{9cf6e78f-9b38-46fb-b4b1-f26d6918f768}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Effects">
+      <UniqueIdentifier>{9c8e1acd-4644-4615-a5f7-b30ff16cf851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Utility">
+      <UniqueIdentifier>{d32d79be-ed67-40c8-b041-6b2c0e490bf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Level">
+      <UniqueIdentifier>{b114c751-5f22-4490-937b-8ecc1b4c4635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scenes">
+      <UniqueIdentifier>{d748b2c7-5a43-4d5b-9e1f-9f6d17e9d431}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scenes\Main Game">
+      <UniqueIdentifier>{1f54fb39-1dc1-4849-b646-964f71d2e6d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Global">
+      <UniqueIdentifier>{1fba17a6-4156-4f3b-b912-ea73da984e79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -19,31 +40,31 @@
       <Filter>cocos</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Candy.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Candy</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameBoard.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\LevelManager.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MainScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameLayer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameHelper.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Level.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Global.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Candy</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CandyExplosion.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameHelper.cpp">
+      <Filter>src\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Level.cpp">
+      <Filter>src\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LevelManager.cpp">
+      <Filter>src\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameLayer.cpp">
+      <Filter>src\Scenes\Main Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainScene.cpp">
+      <Filter>src\Scenes\Main Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Global.cpp">
+      <Filter>src\Global</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,31 +75,31 @@
       <Filter>cocos</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Candy.h">
-      <Filter>src</Filter>
+      <Filter>src\Candy</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameBoard.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\LevelManager.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MainScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameHelper.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameLayer.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Level.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Global.h">
-      <Filter>src</Filter>
+      <Filter>src\Candy</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CandyExplosion.h">
-      <Filter>src</Filter>
+      <Filter>src\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameHelper.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelManager.h">
+      <Filter>src\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Level.h">
+      <Filter>src\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLayer.h">
+      <Filter>src\Scenes\Main Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainScene.h">
+      <Filter>src\Scenes\Main Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Global.h">
+      <Filter>src\Global</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
