@@ -154,6 +154,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Level.cpp" />
     <ClCompile Include="..\Classes\LevelManager.cpp" />
     <ClCompile Include="..\Classes\MainScene.cpp" />
+    <ClCompile Include="..\classes\SwitchPosition.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Level.h" />
     <ClInclude Include="..\Classes\LevelManager.h" />
     <ClInclude Include="..\Classes\MainScene.h" />
+    <ClInclude Include="..\classes\SwitchPosition.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #include "GameHelper.h"
 #include "CandyExplosion.h"
+#include "SwitchPosition.h"
 
 USING_NS_CC;
 
@@ -25,31 +26,10 @@ void GameHelper::transitionSwapCandy(Candy * candyA, Candy * candyB, cocos2d::La
 	{
 		layer->setTouchEnabled(true);
 	});
-	cocos2d::Spawn* spawn = nullptr;
 
-	if (moveSuccess)
-	{
-		// Create spawn for running switch animation
-		auto action1 = TargetedAction::create(candyA, EaseBounceOut::create(MoveTo::create(0.5f, positionB)));
-		auto action2 = TargetedAction::create(candyB, EaseBounceOut::create(MoveTo::create(0.5f, positionA)));
-		spawn = Spawn::create(action1, action2, nullptr);
-	}
-	else
-	{
-		// Candy A
-		auto actionA1 = TargetedAction::create(candyA, MoveTo::create(0.25f, positionB));
-		auto actionA2 = TargetedAction::create(candyA, MoveTo::create(0.25f, positionA));
-		auto sequenceA = Sequence::create(actionA1, actionA2, nullptr);
+	SwitchPosition* switchPosition = SwitchPosition::create(0.5f, candyA, candyB, !moveSuccess);
 
-		// Candy B
-		auto actionB1 = TargetedAction::create(candyB, MoveTo::create(0.25f, positionA));
-		auto actionB2 = TargetedAction::create(candyB, MoveTo::create(0.25f, positionB));
-		auto sequenceB = Sequence::create(actionB1, actionB2, nullptr);
-
-		spawn = Spawn::create(sequenceA, sequenceB, nullptr);
-	}
-
-	layer->runAction(Sequence::create(spawn, touchCallback, nullptr));
+	layer->runAction(Sequence::create(switchPosition, touchCallback, nullptr));
 }
 
 void GameHelper::destroyCandy(Candy * candy)

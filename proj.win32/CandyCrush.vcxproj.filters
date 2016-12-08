@@ -31,6 +31,9 @@
     <Filter Include="src\Gameboard">
       <UniqueIdentifier>{9cf6e78f-9b38-46fb-b4b1-f26d6918f768}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Custom Actions">
+      <UniqueIdentifier>{17e437f6-75ff-4d79-b706-63d047d6adde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -66,6 +69,9 @@
     <ClCompile Include="..\Classes\Global.cpp">
       <Filter>src\Global</Filter>
     </ClCompile>
+    <ClCompile Include="..\classes\SwitchPosition.cpp">
+      <Filter>src\Custom Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -100,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Global.h">
       <Filter>src\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\classes\SwitchPosition.h">
+      <Filter>src\Custom Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
