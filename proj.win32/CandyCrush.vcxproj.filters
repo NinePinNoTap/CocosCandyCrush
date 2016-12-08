@@ -10,9 +10,6 @@
     <Filter Include="cocos">
       <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Candy">
-      <UniqueIdentifier>{9cf6e78f-9b38-46fb-b4b1-f26d6918f768}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Effects">
       <UniqueIdentifier>{9c8e1acd-4644-4615-a5f7-b30ff16cf851}</UniqueIdentifier>
     </Filter>
@@ -31,6 +28,9 @@
     <Filter Include="src\Global">
       <UniqueIdentifier>{1fba17a6-4156-4f3b-b912-ea73da984e79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Gameboard">
+      <UniqueIdentifier>{9cf6e78f-9b38-46fb-b4b1-f26d6918f768}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -40,10 +40,10 @@
       <Filter>cocos</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Candy.cpp">
-      <Filter>src\Candy</Filter>
+      <Filter>src\Gameboard</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameBoard.cpp">
-      <Filter>src\Candy</Filter>
+      <Filter>src\Gameboard</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CandyExplosion.cpp">
       <Filter>src\Effects</Filter>
@@ -75,10 +75,10 @@
       <Filter>cocos</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Candy.h">
-      <Filter>src\Candy</Filter>
+      <Filter>src\Gameboard</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameBoard.h">
-      <Filter>src\Candy</Filter>
+      <Filter>src\Gameboard</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CandyExplosion.h">
       <Filter>src\Effects</Filter>

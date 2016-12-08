@@ -67,7 +67,7 @@ void Candy::dropCandyIntoGame(float height)
 
 	m_sprite->setPositionY(height);
 	
-	m_sprite->runAction(EaseBounceOut::create(MoveTo::create(1.0f, Vec2::ZERO)));
+	m_sprite->runAction(EaseCubicActionOut::create(MoveTo::create(Global::MoveAnimationDuration, Vec2::ZERO)));
 }
 
 void Candy::setAttributes(CandyType colour, CandyBonus bonus)

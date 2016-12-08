@@ -1,7 +1,7 @@
 #include "Global.h"
 
 // [Duration]
-float Global::MoveAnimationDuration = 0.5f;
+float Global::MoveAnimationDuration = 0.25f;
 
 // [Board]
 int Global::ChainLength = 3;

@@ -180,7 +180,7 @@ void GameBoard::collapseColumn(int column)
 				swapCandy(emptyCandy, takenCandy);
 
 				// Animate the taken tile into its new position
-				spawns.pushBack(TargetedAction::create(takenCandy, EaseBounceOut::create(MoveTo::create(1.0f, emptyCandy->getPosition()))));
+				spawns.pushBack(TargetedAction::create(takenCandy, EaseBackOut::create(MoveTo::create(Global::MoveAnimationDuration, emptyCandy->getPosition()))));
 				emptyCandy->setPosition(takenCandy->getPosition());
 
 				break;
@@ -198,6 +198,10 @@ void GameBoard::collapseColumn(int column)
 			nullptr);
 
 		this->runAction(sequence);
+	}
+	else
+	{
+		fillBoard();
 	}
 }
 
